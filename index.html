@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <main>
+
+
+
+
+
+
+        <div class="name">
+            <p>Q</p>
+            <p>U</p>
+            <p>I</p>
+            <p>Z</p>
+            <p> </p>
+            <p>G</p>
+            <p>A</p>
+            <p>M</p>
+            <p>E</p>
+        </div>
+        <div class="testLoad hidden">
+            <p>l</p>
+            <p>o</p>
+            <p>a</p>
+            <p>d</p>
+            <p>i</p>
+            <p>n</p>
+            <p>g</p>
+        </div>
+        <div class="gameWindow">
+            <!-- <div id="loader" class="hidden"></div> -->
+            <div class="gameWindowSetup">
+                <p>Choose category</p>
+                <select name="category" id="category">
+                    <option value="9">General Knowledge</option>
+                    <option value="15">Video Games</option>
+                    <!--add more if you want <option value=""></option> -->
+                </select>
+                <p>Choose difficulty</p>
+                <select name="difficulty" id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <!-- <option value="hard">Hard</option> -->
+                </select>
+                <p>Number of questions</p>
+                <select name="questionLength" id="questionLength">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                    <!-- add more if you want <option value=""></option> -->
+                </select>
+                <button id="start">START</button>
+            </div>
+            <div class="game hidden">
+                <div id="score">
+                    Score: 0
+                </div>
+                <div id="totalQuestions"></div>
+                <div id="question"></div>
+                <div class="answers">
+                    <button id="AnswerTrue">True</button>
+                    <button id="AnswerFalse">False</button>
+                </div>
+                <div id="currentQuestion">
+                </div>
+            </div>
+            <div class="gameRestart hidden">
+                <div class="finalScore"> </div>
+                <button id="backToMeniu">Back to Menu</button>
+            </div>
+        </div>
+    </main>
+    <script src="/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,414 @@
+:root {
+  --effect: hover 1s linear infinite;
+}
+
+* {
+  font-family: "Potta One", cursive;
+}
+
+body {
+  background: rgb(184, 25, 195);
+  background: linear-gradient(
+    90deg,
+    rgba(184, 25, 195, 1) 28%,
+    rgba(191, 44, 109, 1) 78%
+  );
+}
+
+main {
+  background: rgb(184, 25, 195);
+  background: linear-gradient(
+    90deg,
+    rgba(184, 25, 195, 1) 28%,
+    rgba(25, 195, 147, 1) 50%,
+    rgba(191, 44, 109, 1) 78%
+  );
+  border: 14px groove #a420a4;
+  border-radius: 25px 25px 25px 25px;
+
+  -webkit-box-shadow: 5px 5px 15px 5px #ff8080, -9px 5px 15px 5px #ffe488,
+    -7px -5px 15px 5px #8cff85, 12px -5px 15px 5px #80c7ff,
+    12px 10px 15px 7px #e488ff, -10px 10px 15px 7px #ff616b,
+    -10px -7px 27px 1px #8e5cff, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: 5px 5px 15px 5px #ff8080, -9px 5px 15px 5px #ffe488,
+    -7px -5px 15px 5px #8cff85, 12px -5px 15px 5px #80c7ff,
+    12px 10px 15px 7px #e488ff, -10px 10px 15px 7px #ff616b,
+    -10px -7px 27px 1px #8e5cff, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+
+  margin: 0 auto;
+  height: 450px;
+  width: 500px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gameWindow {
+  width: 450px;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Form setup */
+.gameWindowSetup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.gameWindowSetup input {
+  width: 30px;
+}
+
+/* Start button */
+#start,
+#AnswerTrue,
+#backToMeniu {
+  box-shadow: inset 0px 1px 0px 0px #a4e271;
+  background: linear-gradient(to bottom, #89c403 5%, #77a809 100%);
+  background-color: #89c403;
+  border-radius: 6px;
+  border: 1px solid #74b807;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #528009;
+  margin-top: 10px;
+}
+#start:hover,
+#AnswerTrue:hover,
+#backToMeniu:hover {
+  background: linear-gradient(to bottom, #77a809 5%, #89c403 100%);
+  background-color: #77a809;
+  color: #ffffff;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18,
+    0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18;
+}
+#start:active,
+#AnswerTrue:active,
+#backToMeniu:active {
+  position: relative;
+  top: 1px;
+}
+
+#AnswerFalse {
+  box-shadow: inset 0px 1px 0px 0px #e27171;
+  background: linear-gradient(to bottom, #c40303 5%, #a80909 100%);
+  background-color: #ff0000;
+  border-radius: 6px;
+  border: 1px solid #f30808;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #800909;
+  margin-top: 10px;
+}
+#AnswerFalse:hover {
+  background: linear-gradient(to bottom, #a80909 5%, #c40303 100%);
+  background-color: #a80909;
+  color: #ffffff;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff1818,
+    0 0 30px #ff1818, 0 0 40px #ff1818, 0 0 55px #ff1818, 0 0 75px #ff1818;
+}
+#AnswerFalse:active {
+  position: relative;
+  top: 1px;
+}
+
+/* GAME */
+.game {
+  margin-top: 20px;
+  width: 450px;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.finalScore {
+  margin-top: 20px;
+}
+
+#score {
+  font-size: 32px;
+}
+
+#question {
+  width: 350px;
+  height: 100px;
+  text-align: center;
+}
+.gameRestart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 32px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* LOADER && main name animations */
+
+.testLoad {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+.testLoad p {
+  display: inline-block;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 4em;
+  font-family: arial;
+  font-weight: 600;
+  transform: scale(0.5);
+  color: #121212;
+  -webkit-text-stroke: 2px gray;
+}
+
+.testLoad p:nth-child(1) {
+  animation: var(--effect);
+}
+
+.testLoad p:nth-child(2) {
+  animation: var(--effect) 0.125s;
+}
+
+.testLoad p:nth-child(3) {
+  animation: var(--effect) 0.25s;
+}
+
+.testLoad p:nth-child(4) {
+  animation: var(--effect) 0.375s;
+}
+
+.testLoad p:nth-child(5) {
+  animation: var(--effect) 0.5s;
+}
+
+.testLoad p:nth-child(6) {
+  animation: var(--effect) 0.675s;
+}
+
+.testLoad p:nth-child(7) {
+  animation: var(--effect) 0.75s;
+}
+
+.testLoad p:nth-child(1) {
+  animation: var(--effect);
+}
+
+.testLoad p:nth-child(2) {
+  animation: var(--effect) 0.125s;
+}
+
+.testLoad p:nth-child(3) {
+  animation: var(--effect) 0.25s;
+}
+
+.testLoad p:nth-child(4) {
+  animation: var(--effect) 0.375s;
+}
+
+.testLoad p:nth-child(5) {
+  animation: var(--effect) 0.5s;
+}
+
+.testLoad p:nth-child(6) {
+  animation: var(--effect) 0.675s;
+}
+
+.testLoad p:nth-child(7) {
+  animation: var(--effect) 0.75s;
+}
+.testLoad p:nth-child(1) {
+  animation: var(--effect);
+}
+
+.testLoad p:nth-child(2) {
+  animation: var(--effect) 0.125s;
+}
+
+.testLoad p:nth-child(3) {
+  animation: var(--effect) 0.25s;
+}
+
+.testLoad p:nth-child(4) {
+  animation: var(--effect) 0.375s;
+}
+
+.testLoad p:nth-child(5) {
+  animation: var(--effect) 0.5s;
+}
+
+.testLoad p:nth-child(6) {
+  animation: var(--effect) 0.675s;
+}
+
+.testLoad p:nth-child(7) {
+  animation: var(--effect) 0.75s;
+}
+
+/* MAIN NAME */
+
+.name {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  max-height: 110px;
+}
+.name p {
+  display: inline-block;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 4em;
+  font-family: arial;
+  font-weight: 600;
+  transform: scale(0.5);
+  color: #121212;
+  -webkit-text-stroke: 2px gray;
+}
+
+.name p:nth-child(1) {
+  animation: var(--effect);
+}
+
+.name p:nth-child(2) {
+  animation: var(--effect) 0.125s;
+}
+
+.name p:nth-child(3) {
+  animation: var(--effect) 0.25s;
+}
+
+.name p:nth-child(4) {
+  animation: var(--effect) 0.375s;
+}
+
+.name p:nth-child(5) {
+  animation: var(--effect) 0.5s;
+}
+
+.name p:nth-child(6) {
+  animation: var(--effect) 0.675s;
+}
+
+.name p:nth-child(7) {
+  animation: var(--effect) 0.75s;
+}
+.name p:nth-child(8) {
+  animation: var(--effect) 0.95s;
+}
+.name p:nth-child(9) {
+  animation: var(--effect) 1.15s;
+}
+
+.name p:nth-child(1) {
+  animation: var(--effect);
+}
+
+.name p:nth-child(2) {
+  animation: var(--effect) 0.125s;
+}
+
+.name p:nth-child(3) {
+  animation: var(--effect) 0.25s;
+}
+
+.name p:nth-child(4) {
+  animation: var(--effect) 0.375s;
+}
+
+.name p:nth-child(5) {
+  animation: var(--effect) 0.5s;
+}
+
+.name p:nth-child(6) {
+  animation: var(--effect) 0.675s;
+}
+
+.name p:nth-child(7) {
+  animation: var(--effect) 0.75s;
+}
+.name p:nth-child(8) {
+  animation: var(--effect) 0.95s;
+}
+.name p:nth-child(9) {
+  animation: var(--effect) 1.15s;
+}
+.name p:nth-child(1) {
+  animation: var(--effect);
+}
+
+.name p:nth-child(2) {
+  animation: var(--effect) 0.125s;
+}
+
+.name p:nth-child(3) {
+  animation: var(--effect) 0.25s;
+}
+
+.name p:nth-child(4) {
+  animation: var(--effect) 0.375s;
+}
+
+.name p:nth-child(5) {
+  animation: var(--effect) 0.5s;
+}
+
+.name p:nth-child(6) {
+  animation: var(--effect) 0.675s;
+}
+
+.name p:nth-child(7) {
+  animation: var(--effect) 0.75s;
+}
+.name p:nth-child(8) {
+  animation: var(--effect) 0.95s;
+}
+.name p:nth-child(9) {
+  animation: var(--effect) 1.15s;
+}
+@keyframes hover {
+  0% {
+    transform: scale(0.5);
+    color: #121212;
+    -webkit-text-stroke: 2px gray;
+  }
+
+  20% {
+    transform: scale(1);
+    color: pink;
+    -webkit-text-stroke: 3px red;
+    filter: drop-shadow(0 0 1px black) drop-shadow(0 0 1px black)
+      drop-shadow(0 0 3px red) drop-shadow(0 0 5px red) hue-rotate(10turn);
+  }
+
+  50% {
+    transform: scale(0.5);
+    color: #121212;
+    -webkit-text-stroke: 2px gray;
+  }
+}
+
+.hidden {
+  display: none;
+}
